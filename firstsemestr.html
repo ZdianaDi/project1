@@ -1,0 +1,518 @@
+<!DOCTYPE html> 
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать на мой сайт</title>
+    <style>
+        body {
+            margin: 20px;
+            border: 1px solid black;
+        }
+        .center {
+            text-align: center;
+        }
+        footer {
+            border-top: 1px solid black;
+            padding: 10px;
+        }
+        header {
+            border-bottom: 1px solid black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        header * {
+            margin: 0px;
+            color: #331a00;
+        }
+        nav {
+            position: sticky; 
+            top: 0; 
+            border-bottom: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: tan;
+            z-index: 10; 
+        }
+        .right {
+            text-align: right;
+            vertical-align: middle;
+        }
+        #group {
+            margin-top: 0px;
+        }
+        #about {
+            max-width: 100%;
+
+        }
+        #pictr {
+            margin-left: 150px;
+            
+        }
+        .container {
+            display: flex;
+            
+        }
+        .column-left {
+            padding-left: 20px;
+            border-right: 1px solid black;
+            flex: 1;
+            background-color: #331a00;
+            color: white; 
+        }
+        .image {
+            display: flex;
+            width: 20%;
+            height: auto;
+            max-width: 100%;
+            margin: auto;
+        }
+        .text {
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 15px;
+        }
+        .container2 {
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+        p {
+            font-size: large;
+        }
+        .logo {
+            border-radius: 15%;
+        }
+        .vk {
+            float: right;
+            position: relative;
+            right: 10px;
+            top: 7px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px; 
+            margin-right: 20px; /
+        }
+
+        .main-content {
+            flex: 3; 
+            margin-left: 0; 
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .user-info {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        aside {
+            width: 20%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main h1 {
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            display: flex;
+            align-items: center;
+        }
+
+        .intro p {
+            margin-right: 20px; 
+        }
+
+        .image {
+            width: 300px; 
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+
+        main section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+        table {
+            width: 700px; 
+            height: 400px;
+            border-collapse: collapse; 
+        }
+
+        th, td {
+            padding: 6px; 
+            text-align: left; 
+        }
+        .link-b {
+            color: tan; ;
+        }
+        .scroll-to-top {
+            position: fixed; 
+            bottom: 10px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background-color: tan; 
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 100; 
+        }
+        .table-responsive {
+            overflow-x: auto; 
+            margin-bottom: 20px; 
+        }
+
+        table {
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+
+        th, td {
+            padding: 6px; 
+            text-align: left; 
+            border: 1px solid #ddd; 
+        }
+
+        /* Стили для iframe и object */
+        iframe, object {
+            max-width: 100%; /* Ограничиваем ширину для мобильных устройств */
+            height: auto; /* Автоматическая высота */
+        }
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column; /* Вертикальное расположение на мобильных устройствах */
+            }
+
+            .column-left {
+                border-right: none; /* Убираем границу для мобильных */
+            }
+
+            nav {
+                grid-template-columns: repeat(2, 1fr); /* Меньше колонок на мобильных */
+            }
+        }
+
+        @media (min-width: 600px) {
+            .column-left {
+                border-right: 1px solid white; /* Возвращаем границу для больших экранов */
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <header>
+      <img
+    src="C:\Users\33397\Desktop\photo_5406955052607857041_x.jpg"
+      alt = logo
+      height="30"
+      width="30"
+      />
+    <div class="right">
+      <h4 id="group">ЭФБО-02-23</h4>
+      <h4>Зайнуллина Диана Надировна</h4>
+    </div>
+  </header>
+  <nav>
+    <a href="page_1.html">Главная</a>
+    <a href="firstsemestr.html"> Первый семестр</a>
+    <a href="secondsem.html">Второй семестр</a>
+    <a href="uslugi.html">Услуги</a>
+    <a href="#">Авторизация</a>
+  </nav>
+  <div class="container">
+    <div class="column-left">
+      <h2>Навигация по странице</h2>
+      <p></p>
+      <a href="#lection" class="link-b" >Лекции</a>
+      <br />
+      <br />
+      <a href="#practice" class="link-b" >Практики</a>
+      <br />
+      <br />
+      <a  href="#adres" class="link-b" >Адрес вуза</a>
+      <br />
+      <br />
+      <a href="#workplace" class="link-b" >Рабочая программа</a>
+    </div>
+
+        <main class="main-content">
+            <h2>Первый семестр</h2>
+
+            <h3 id="lection">Лекции</h3>
+            <div class="table-responsive">
+            <table border="1" cellspacing="0" cellpadding=5px>
+                <tr>
+                    <th>Номер</th>
+                    <th>Тема</th>
+                    <th>Посещение</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Основы языка HTML</td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Углубленное изучение HTML</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Основы работы с CSS</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Адаптивная верстка. Flexbox и Grid Layout</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Bootstrap — работа с фреймворком</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Основы языка JavaScript</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Работа с DOM и событиями в JavaScript</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Введение в GitHub и GitHub Pages</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            </div>
+
+            <h3 id="practice" style="margin-top: 30px;">Практики</h3>
+            <div class="table-responsive">
+
+            <table border="1" cellspacing="0" cellpadding=5px>
+                <tr>
+                    <th>Номер</th>
+                    <th>Тема</th>
+                    <th>Посещение</th>
+                    <th>Выполнение</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Основы языка HTML</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Формы и кнопки в HTML</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+
+</tr>
+                <tr>    
+                    <td>3</td>
+                    <td>Таблицы и интерактивные элементы HTML</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Основы работы с CSS</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Работа с классами в CSS</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Работа с сетками и разметкой в HTML</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Адаптивная вёрстка</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Bootstrap</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Основы языка JavaScript</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Базовые задачи на JS</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>DOM-структура приложений и работа с объектами в языке JS</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Встраивание скриптов</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Отладка сценариев</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Анимации и работа с ними</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Github</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Защита проекта</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            </div>
+
+            <h3 id="adres" style="margin-top: 30px;">Занятия проходят по адресу: пр. Вернадского 78</h3>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6cf5b22a19261b7a2bf1f46e91a5578e54e5bc8b4caa6371778e49582d55b9a9&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+
+            <h3 id="workplace" style="margin-top: 30px;">Рабочая программа</h3>
+            <object data="pr3.pdf" type="application/pdf" width="100%" height="500"></object>        
+        </main>      
+    </div>
+    <footer>
+        <p>&copy; Зайнуллина Диана Надировна, 2024</p>           
+    </footer>
+    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+    
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Плавная прокрутка
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+    
+
+
+

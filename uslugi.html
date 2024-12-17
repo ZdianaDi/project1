@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница 2</title>
+    <style>
+        body {
+            margin: 20px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: auto;
+        }
+
+        header {
+            padding: 10px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        header * {
+            margin: 0px;
+            color: #331a00;
+        }
+
+        nav * {
+            margin-right: 15px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: tan;
+            z-index: 10;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .left {
+            text-align: left;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        .center {
+            text-align: center;
+            margin: 12px;
+            padding: 0;
+        }
+
+        footer {
+            border-top: 1px solid black;
+        }
+
+        .container {
+            display: flex;
+            height: 650px;
+        }
+
+        .column-left {
+            padding-left: 20px;
+            border-right: 1px solid black;
+            flex: 1;
+            background-color: #331a00;
+            color: white;
+            height: 650px;
+            width: 35%;
+        }
+
+        .column-right {
+            flex: 3;
+            display: inline-block;
+            height: 650px;
+            width: 65%;
+        }
+
+        .block {
+            display: inline-block;
+            border: none;
+            margin-right: 10px;
+            margin: 5px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .pic {
+            border-radius: 100%;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: tan;
+            color: #331a00;
+            cursor: pointer;
+            transition: box-shadow 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        but {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: tan;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: #442200;
+        }
+
+        button.active {
+            background-color: #442200;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-b {
+            color: tan;
+            ;
+        }
+
+        .grcont {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #442200;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 290px) and (max-width: 486px) {
+            .left {
+                text-align: left;
+                margin-top: 50px;
+                font-weight: 300;
+            }
+
+            nav {
+                position: sticky;
+                top: 0;
+                border-bottom: 1px solid black;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px 20px;
+                background-color: tan;
+                z-index: 10;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                /* Убираем фиксированную высоту */
+            }
+
+            .column-left {
+                padding-left: 20px;
+                border-right: 1px solid black;
+                flex: 1;
+                background-color: #331a00;
+                color: white;
+                height: auto;
+                /* Убираем фиксированную высоту */
+                width: auto;
+                /* Делает колонку на всю ширину */
+            }
+
+            .column-right {
+                flex-direction: column;
+                display: flex;
+                /* Изменено на flex */
+                align-items: center;
+                /* Выравнивание по центру */
+                height: auto;
+                /* Убираем фиксированную высоту */
+                width: 100%;
+                /* Делает колонку на всю ширину */
+            }
+
+
+            .column-right p {
+                padding: 15px;
+            }
+
+            .block {
+                display: flex;
+                /* Изменено на flex */
+                flex-direction: column;
+                /* Строки с изображениями и текстами будут располагаться вертикально */
+                align-items: center;
+                /* Центрируем элементы */
+                width: 100%;
+                /* Убираем фиксированную ширину */
+                margin-bottom: 15px;
+                /* Добавим немного отступа между блоками */
+            }
+
+            .pic {
+                border-radius: 100%;
+                object-fit: cover;
+                width: 150px;
+                /* Устанавливаем фиксированную ширину изображений */
+                height: 150px;
+                /* Устанавливаем фиксированную высоту изображений */
+                margin-bottom: 10px;
+                /* Добавляем отступ между картинкой и кнопкой */
+            }
+
+            button {
+                width: auto;
+                /* Кнопки на мобильных устройствах могут быть разных размеров */
+            }
+
+            .grcont {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 290px) and (max-width: 920px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                /* Убираем фиксированную высоту */
+            }
+
+            .column-left {
+                padding-left: 20px;
+                border-right: 1px solid black;
+                flex: 1;
+                background-color: #331a00;
+                color: white;
+                height: auto;
+                /* Убираем фиксированную высоту */
+                width: auto;
+                /* Делает колонку на всю ширину */
+            }
+
+            .column-right {
+                flex-direction: column;
+                display: flex;
+                /* Изменено на flex */
+                align-items: center;
+                /* Выравнивание по центру */
+                height: auto;
+                /* Убираем фиксированную высоту */
+                width: 100%;
+                /* Делает колонку на всю ширину */
+            }
+
+            .column-right p {
+                padding: 15px;
+            }
+
+            .block {
+                display: flex;
+                /* Изменено на flex */
+                flex-direction: column;
+                /* Строки с изображениями и текстами будут располагаться вертикально */
+                align-items: center;
+                /* Центрируем элементы */
+                width: 100%;
+                /* Убираем фиксированную ширину */
+                margin-bottom: 15px;
+                /* Добавим немного отступа между блоками */
+            }
+
+            .pic {
+                border-radius: 100%;
+                object-fit: cover;
+                width: 150px;
+                /* Устанавливаем фиксированную ширину изображений */
+                height: 150px;
+                /* Устанавливаем фиксированную высоту изображений */
+                margin-bottom: 10px;
+                /* Добавляем отступ между картинкой и кнопкой */
+            }
+
+            button {
+                width: auto;
+                /* Кнопки на мобильных устройствах могут быть разных размеров */
+            }
+
+            .grcont {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="C:\Users\33397\Desktop\photo_5406955052607857041_x.jpg" alt="logo" height="30" width="30" />
+        <div class="right">
+            <h4>ЭФБО-02-23</h4>
+            <h4>Зайнуллина Диана Надировна</h4>
+        </div>
+    </header>
+    <nav>
+        <a href="page_1.html">Главная</a>
+        <a href="firstsemestr.html">Первый семестр</a>
+        <a href="secondsem.html">Второй семестр</a>
+        <a href="uslugi.html">Услуги</a>
+        <a href="registration.html">Авторизация</a>
+    </nav>
+    <div class="container">
+        <div class="column-left">
+            <h3>Навигация по странице</h3>
+            <a href="page_1.html" class="link-b">Фронтенд</a>
+            <br />
+            <br />
+            <a href="page_1.html" class="link-b">Бэкенд</a>
+        </div>
+        <div class="column-right">
+            <h3>Разработка веб-приложений</h3>
+            <span class="block">
+                <img src="картинка1.jpg" alt="pic1" height="200" width="200"
+                    class="pic" />
+                <div>
+                    <a href="registration.html"><button type="button"
+                            onclick="toggleActive(this)">Сайт-визитка</button></a>
+                </div>
+            </span>
+            <span class="block">
+                <img src="картинка2.jpg" alt="pic2" class="pic" height="200"
+                    width="200" />
+                <div>
+                    <a href="registration.html"><button type="button" onclick="toggleActive(this)">Корпоративный
+                            сайт</button></a>
+                </div>
+            </span>
+            <span class="block">
+                <img src="картинка3.jpg" alt="pic3" class="pic" height="200"
+                    width="200" />
+                <div>
+                    <a href="registration.html"><button type="button"
+                            onclick="toggleActive(this)">Интернет-магазин</button></a>
+                </div>
+            </span>
+            <p class="left">
+                Веб-разработка - это процесс создания и поддержки веб-сайтов и веб-приложений.
+                Сегодня веб-разработка является важной отраслью IT-сферы, поскольку многие компании
+                и организации нуждаются в присутствии в интернете.
+            </p>
+            <p>
+                HTML (HyperText Markup Language) - основной язык разметки веб-страниц.
+                С помощью HTML разработчик определяет структуру и содержимое страницы.
+                CSS (Cascading Style Sheets) - язык описания внешнего вида веб-страниц.
+                CSS позволяет определить цвета, шрифты, отступы, фоны и другие стилевые элементы.
+            </p>
+            <div class="grcont">
+                <div class="grid-item">
+                    <a href="https://web.telegram.org/k/#@fmusbot">
+                        <but type="but" onclick="toggleActive(this)">Плейлист</but>
+                    </a>
+
+                </div>
+
+                <div class="grid-item">
+                    <a href="https://musescore.com/user/30451826/scores/7314134">
+                        <but type="but" onclick="toggleActive(this)">Ноты</but>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="https://skillbox.ru/media/cinemusic/2023-russian-most-streamed-music/">
+                        <but type="but" onclick="toggleActive(this)">Исполнители</but>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="https://vk.com/id567877525" class="vk">
+            <img src="C:\Users\33397\Desktop\photo_5406955052607857016_x.jpg" style="float: right" alt="vk" height="50"
+                width="70" />
+        </a>
+        <p class="center">&copy; Зайнуллина Диана Надировна, 2024</p>
+    </footer>
+    <script>
+        function toggleActive(button) {
+            button.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма регистрации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px; 
+            border: 1px solid black;
+            background-color: tan;
+        }
+        h2 {
+            text-align: center;    
+        }
+        h4 {
+            text-align: center;
+        }
+        nav {
+            position: sticky; 
+            top: 0; 
+            border-bottom: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: tan;
+            z-index: 10; 
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-group {
+            display: flex;
+            align-items: center; 
+            margin: 10px 0;
+        }
+        label {
+            width: 150px; 
+            margin-right: 10px; 
+            white-space: nowrap; 
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #331a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #442200;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px; 
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; 
+            }
+            label {
+                width: auto; 
+                margin-right: 5px; 
+            }
+            input, select, textarea, button {
+                padding: 8px; 
+                font-size: 14px; 
+            }
+        }
+
+        @media (max-width: 400px) {
+            button { 
+                padding: 12px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="page_1.html">Главная</a>
+        <a href="firstsemestr.html">Первый семестр</a>
+        <a href="secondsem.html">Второй семестр</a>
+        <a href="uslugi.html">Услуги</a>
+        <a href="registration.html">Авторизация</a>
+    </nav>
+
+<h2>Разработка веб-приложения</h2>
+<h4>Заполните форму и мы обязательно свяжемся с вами<br>в ближайшее время для уточнения деталей</h4>
+
+<form action="#" method="POST">
+    <div class="form-group">
+        <label for="username">Как Вас зовут?</label>
+        <input type="text" id="username" name="username" required />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Ваш e-mail:</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required />
+    </div>
+
+    <div class="form-group">
+        <label for="country">Страна:</label>
+        <select id="country" name="country" required>
+            <option value="">Выберите страну</option>
+            <option value="ru">Россия</option>
+            <option value="us">США</option>
+            <option value="kz">Казахстан</option>
+            <option value="by">Беларусь</option>
+            <option value="ua">Украина</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="birthdate">Дата:</label>
+        <input type="date" id="birthdate" name="birthdate" required />
+    </div>
+
+    <div class="form-group">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Введите ваш комментарий..."></textarea>
+    </div>
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="agreement" name="agreement" required />
+        <label for="agreement">Согласен на обработку моих персональных данных</label>
+    </div>
+
+    <button type="submit">Отправить заявку</button>
+</form>
+
+</body>
+</html>
