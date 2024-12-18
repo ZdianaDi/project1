@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница1</title>
+    <style>
+        body {
+            margin: 20px;
+            border: 1px solid black;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        footer {
+            border-top: 1px solid black;
+            padding: 10px;
+        }
+
+        header {
+            border-bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        header * {
+            margin: 0px;
+            color: #331a00;
+        }
+
+        .link-b {
+            color: tan;
+        }
+
+        .vk {
+            float: right;
+            position: relative;
+            right: 10px;
+            top: 7px;
+        } 
+
+        nav {
+            position: sticky; 
+            top: 0; 
+            border-bottom: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: tan;
+            z-index: 10; 
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 15px;
+        }
+
+        .right {
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+        }
+
+        .column-left {
+            padding-left: 20px;
+            border-right: 1px solid white;
+            flex: 1;
+            background-color: #331a00;
+            color: white; 
+        }
+
+        .column-right {
+            padding-left: 20px;
+            flex: 3;
+            color: #331a00;
+        }
+
+        .image {
+            display: block;
+            width: 100%; 
+            height: auto; 
+            max-width: 220px; 
+            margin: auto;
+        }
+
+        .container2 {
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            background-color: #331a00;
+        }
+
+        .custom-font {
+            font-family: "MV BOLI", sans-serif; 
+            font-weight: 700; 
+            margin-right: 0px;
+            margin-left: 15px;
+            border: 3px solid tan; 
+            padding: 70px; 
+            background-color: #331a00;
+            color: white;
+        }
+
+        .scroll-to-top {
+            position: fixed; 
+            bottom: 10px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background-color: tan; 
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 100; 
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column; 
+            }
+
+            .column-left {
+                border-right: none; 
+            }
+
+            nav {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        @media (min-width: 600px) {
+            .column-left {
+                border-right: 1px solid white; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img
+    src="лого.jpg"
+      alt = logo
+      height="30"
+      width="30"
+      />
+        <div class="right">
+            <h4 id="group">ЭФБО-02-23</h4>
+            <h4>Зайнуллина Диана Надировна</h4>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="firstsemestr.html">Первый семестр</a>
+        <a href="secondsem.html">Второй семестр</a>
+        <a href="uslugi.html">Услуги</a>
+        <a href="registration.html">Авторизация</a>
+    </nav>
+    <div class="container">
+        <div class="column-left">
+            <h2>Навигация по странице</h2>
+            <a href="#frontend" class="link-b">Фронтенд</a>
+            <br />
+            <a href="#backend" class="link-b">Бэкенд</a>
+        </div>
+        <div class="column-right">
+            <h2>Добро пожаловать на мой сайт!</h2>
+            <div class="container2">
+                <p id="about" class="custom-font">
+                    My name is Diana, and I am a beginner frontend developer.
+                </p>
+                <img id="pictr" src="обезьянка.jpg" alt="pic2" class="image" />
+            </div>
+            <h2 id="frontend">Фронтенд</h2>
+            <p>
+                Фронтенд (или клиентская часть) - это то, что видит пользователь. Он
+                включает в себя все визуальные элементы веб-сайта или приложения:
+                кнопки, формы, изображения и текст. Фронтенд разработчики используют
+                языки разметки и стилизации, такие как HTML, CSS и JavaScript, чтобы
+                создавать интерактивные и привлекательные интерфейсы. Основная задача
+                фронтенда - обеспечить удобство использования и эстетическую
+                привлекательность.
+            </p>
+            <iframe
+                width="300"
+                height="205"
+                src="https://rutube.ru/play/embed/ca39c17bde5cc48ce95a9a7fa5f733dc"
+                frameBorder="0"
+                allow="clipboard-write; autoplay"
+                webkitAllowFullScreen
+                mozallowfullscreen
+                allowFullScreen
+            ></iframe>
+            <h2 id="backend">Бэкенд</h2>
+            <p>
+                Бэкенд (или серверная часть) — это "за кулисами" веб-приложения. Он
+                отвечает за обработку данных, управление пользователями и
+                взаимодействие с базами данных. Бэкенд разработчики используют языки
+                программирования, такие как Python, Ruby, Java, а также фреймворки и
+                базы данных для создания логики приложения. Основная задача бэкенда -
+                обеспечить стабильную работу приложения и безопасность данных.
+            </p>
+            <iframe
+                width="300"
+                height="205"
+                src="https://rutube.ru/play/embed/a1a4c975ddc44ffa099f29904f2aee8c"
+                frameBorder="0"
+                allow="clipboard-write; autoplay"
+                webkitAllowFullScreen
+                mozallowfullscreen
+                allowFullScreen
+            ></iframe>
+        </div>
+    </div>
+    <footer>
+        <a href="https://vk.com/id567877525" class="vk">
+            <img src= "вк.jpg" alt="vk" height="50" width="70" />
+        </a>
+        <p class="center">&copy; Зайнуллина Диана Надировна, 2024</p>
+    </footer>
+    <button class="scroll-to-top" onclick="scrollToTop()">Наверх</button>
+    
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
